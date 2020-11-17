@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-  validates :name, presence: true
-  validates :category, presence: true
-  validates :price, presence: true
+  belongs_to :farmer, class_name: 'User'
+  has_many :orders
 end
