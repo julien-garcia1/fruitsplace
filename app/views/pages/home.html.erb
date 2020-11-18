@@ -1,23 +1,32 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1860&q=80);">
+  <h1>FRUITSPLACE</h1>
+  <h3>Retrouvez votre marché du village en ligne !</h3>
+</div>
 
-
-<div class="banner">
-<h1>FRUITPLACE</h1>
-<h3>Quel est le fruit le plus végétarien ?</h3>
-<p>C’est la « pas steak » !</p>
-
-<div class="display">
-  <div class="marge">
-<p>
-  <%= link_to 'My Products', my_products_path, :class => "btn btn-primary" %>
-</p>
+<div class="container">
+  <div class="cards-home">
+    <div class="card-home">
+      <h3>I'm a farmer</h3>
+      <p>See all my products</p>
+      <%= link_to 'My Products', my_products_path, :class => "btn btn-primary" %>
+    </div>
+    <div class="card-home">
+      <h3>I'm a client</h3>
+      <p>See all products in the market</p>
+      <%= link_to "Let's shop", products_path, :class => "btn btn-primary" %>
+    </div>
   </div>
-  <div class="marge">
-<p>
-  <%= link_to 'Products', products_path, :class => "btn btn-primary" %>
-</p>
-<p>
-  <%= link_to 'My Cart', orders_path, :class => "btn btn-primary" %>
-</p>
 </div>
-</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
 </div>

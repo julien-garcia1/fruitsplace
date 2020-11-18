@@ -1,12 +1,21 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  justify-content: space-evenly;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar li {
+  list-style: none;
+  display: inline-block;
+  text-decoration: none;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+li a {
+  color: black;
+  margin-top: 7px;
+  &:hover {
+    color: grey
+  }
+}
+
+.nav-item .dropdown {
+  margin-left: 100px;
 }
