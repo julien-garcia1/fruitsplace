@@ -4,10 +4,10 @@
 <div class="container">
 
 <div class="container">
-  <div class="cards-home">
+  <div class="cards-products">
     <% @products.each do |product| %>
 
-    <div class="card-home">
+    <div class="card-products">
       <h3><%= product.name %></h3>
       <p><%= product.category %> <%= product.price %> €</p>
       <%= cl_image_tag product.photo.key, :class => 'card-img' %>
