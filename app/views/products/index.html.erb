@@ -16,8 +16,7 @@
     <td><%= product.name %></td>
     <td><%= product.category %></td>
     <td><%= product.price %> €</td>
-    <td><%= product.farmer.email %></td>
-    <td></td>
+    <td><%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %></td>
     <td><%= link_to 'buy', product_orders_path(product), method: :post %></td>
   </tr>
   <% end %>
