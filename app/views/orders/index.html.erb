@@ -1,0 +1,32 @@
+<h1>Cart</h1>
+<table class="table">
+<thead>
+    <tr>
+      <th>Name</th>
+      <th>price</th>
+      <th>category</th>
+    </tr>
+  </thead>
+
+<tbody>
+  <% @orders.each do |order| %>
+  <tr>
+    <td><%= order.product.name %></td>
+    <td><%= order.product.price %>€</td>
+    <td><%= order.product.category %></td>
+    <td><%= link_to order_path(order), method: :delete, data: { confirm: "Are you sure?" } do %>
+       <i class="fa fa-trash destroy_dose"></i>
+     <% end %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+<h3>
+  TOTAL = <%= @orders.sum{|order| order.product.price} %> €
+</h3>
+  <%= link_to 'PAYER', pay_path,method: :post, data: { confirm: "Are you sure?" }, class: 'btn btn-primary'%>
+
+  <%= link_to 'Back', products_path, class: 'btn btn-primary'%>
+
+

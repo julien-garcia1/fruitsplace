@@ -1,26 +1,25 @@
 class OrdersController < ApplicationController
-  def show
-    @order = Order.find(params[:id])
+  def index
+    @orders = Order.where(user_id:current_user.id, status: "unpayed")
   end
 
-  def new
-    @order = Order.new
+  def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
+    redirect_to orders_path, notice: 'Ce produit a été supprimé'
   end
 
   def create
-    @order = Order.new(order_params)
-
-    if @order.save
-      redirect_to @order, notice: 'order was successfully created.'
-    else
-      render :new
-    end
+  @product = Product.find(params[:product_id])
+  @user = current_user
+  @order = Order.new(product: @product, user: @user, status: 'unpayed')
+  @order.save
+  redirect_to products_path, notice: 'Votre produit a bien été ajouté'
   end
 
-  private
-
-  def order_params
-    params.require(:order).permit(:name, :category, :quantity)
+  def pay
+    @orders = Order.where(user_id:current_user.id, status: "unpayed")
+    @orders.update_all(status: 'paid')
+    redirect_to root_path, notice:'Votre commande a bien été payé'
   end
-
 end
