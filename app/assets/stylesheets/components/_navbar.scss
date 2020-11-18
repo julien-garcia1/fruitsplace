@@ -1,21 +1,30 @@
 .navbar {
-  justify-content: space-evenly;
+  display: flex;
+  border-bottom: 1px solid #C0C0C0;
+  background-color: white;
+  justify-content: space-between;
+  // box-shadow: 0px 1px 0px grey;
 }
 
 .navbar li {
   list-style: none;
   display: inline-block;
   text-decoration: none;
+  vertical-align: middle;
+  font-weight: 500;
 }
 
 li a {
   color: black;
-  margin-top: 7px;
+  margin-top: 8px;
   &:hover {
     color: grey
   }
 }
 
-.nav-item .dropdown {
-  margin-left: 100px;
+.fa-shopping-cart {
+  vertical-align: middle;
+  font-size: 24px;
+  color: #666666;
+  padding-right: 20px;
 }
