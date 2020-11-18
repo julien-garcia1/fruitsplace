@@ -1,26 +1,19 @@
+<div class="banner-products" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1860&q=80);">
 <h1>Products</h1>
-<table class="table">
-<thead>
-    <tr>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th>Farmer</th>
-      <th>Add to cart</th>
-    </tr>
-  </thead>
+</div>
+<div class="container">
 
-<tbody>
-  <% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.category %></td>
-    <td><%= product.price %> €</td>
-    <td><%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %></td>
-    <td><%= link_to 'buy', product_orders_path(product), method: :post %></td>
-  </tr>
-  <% end %>
-</tbody>
-</table>
-<%= link_to 'See your cart', orders_path %>
-<%= link_to 'Back', root_path %>
+<div class="container">
+  <div class="cards-home">
+    <% @products.each do |product| %>
+
+    <div class="card-home">
+      <h3><%= product.name %></h3>
+      <p><%= product.category %> <%= product.price %> €</p>
+      <%= cl_image_tag product.photo.key, :class => 'card-img' %>
+      <%= link_to 'buy', product_orders_path(product), method: :post, :class => "btn btn-primary"%>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>
