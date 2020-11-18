@@ -22,4 +22,5 @@ class OrdersController < ApplicationController
     @orders.update_all(status: 'paid')
     redirect_to root_path, notice:'Votre commande a bien été payé'
   end
+
 end
