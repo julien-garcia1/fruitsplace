@@ -1,32 +1,33 @@
-<h1>Cart</h1>
-<table class="table">
-<thead>
-    <tr>
-      <th>Name</th>
-      <th>price</th>
-      <th>category</th>
-    </tr>
-  </thead>
-
-<tbody>
-  <% @orders.each do |order| %>
-  <tr>
-    <td><%= order.product.name %></td>
-    <td><%= order.product.price %>€</td>
-    <td><%= order.product.category %></td>
-    <td><%= link_to order_path(order), method: :delete, data: { confirm: "Are you sure?" } do %>
-       <i class="fa fa-trash destroy_dose"></i>
-     <% end %></td>
-  </tr>
-  <% end %>
-</tbody>
-</table>
-
-<h3>
-  TOTAL = <%= @orders.sum{|order| order.product.price} %> €
-</h3>
-  <%= link_to 'PAYER', pay_path,method: :post, data: { confirm: "Are you sure?" }, class: 'btn btn-primary'%>
-
-  <%= link_to 'Back', products_path, class: 'btn btn-primary'%>
+<div class="container">
+  <h1 id="cart-title">Cart</h1>
+  <div class="row">
+    <div class="col-lg-8 products-order">
+      <% @orders.each do |order| %>
+        <div class="product-order">
+          <%= cl_image_tag order.product.photo.key, :class => 'img-order' %>
+          <div class="block-components">
+              <p class="product-name-order"><%= order.product.name %></p>
+              <p class="product-price-order"><%= order.product.price %>€</p>
+          </div>
+          <%= link_to order_path(order), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash destroy_dose"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-lg-4">
+      <div class="pay-order">
+        <div class="total">
+          <h4>TOTAL</h4>
+          <h4><%= @orders.sum{|order| order.product.price} %> €</h4>
+        </div>
+        <%= link_to 'Payer ma commande', pay_path,method: :post, data: { confirm: "Are you sure?" }, class: 'btn btn-success btn-pay-order'%>
+      </div>
+    </div>
+  </div>
+    <div class="button-cart">
+      <%= link_to 'Back', products_path, class: 'btn btn-primary'%>
+    </div>
+</div>
 
 
