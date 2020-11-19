@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 id="cart-title">Cart</h1>
+  <h1 id="cart-title">Panier</h1>
   <div class="row">
     <div class="col-lg-8 products-order">
       <% @orders.each do |order| %>
@@ -9,7 +9,7 @@
               <p class="product-name-order"><%= order.product.name %></p>
               <p class="product-price-order"><%= order.product.price %>€</p>
           </div>
-          <%= link_to order_path(order), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <%= link_to order_path(order), method: :delete, data: { confirm: "Êtes vous sûr ?" } do %>
             <i class="fa fa-trash destroy_dose"></i>
           <% end %>
         </div>
@@ -21,12 +21,12 @@
           <h4>TOTAL</h4>
           <h4><%= @orders.sum{|order| order.product.price} %> €</h4>
         </div>
-        <%= link_to 'Payer ma commande', pay_path,method: :post, data: { confirm: "Are you sure?" }, class: 'btn btn-success btn-pay-order'%>
+        <%= link_to 'Payer ma commande', pay_path,method: :post, data: { confirm: "Êtes vous sûr ?" }, class: 'btn btn-success btn-pay-order'%>
       </div>
     </div>
   </div>
     <div class="button-cart">
-      <%= link_to 'Back', products_path, class: 'btn btn-primary'%>
+      <%= link_to 'Retour', products_path, class: 'btn btn-primary'%>
     </div>
 </div>
 

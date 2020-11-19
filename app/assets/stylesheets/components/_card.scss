@@ -28,10 +28,11 @@
 .card-products {
     text-align: center;
     box-shadow: 2px 2px 12px #B1B1B1 ;
-    border-radius: 4px;
-    height: 360px;
-    width: 300px;
-    padding: 20px;
+    border-radius: 10px;
+    height: 280px;
+    width: 200px;
+    position:relative;
+    padding: 0px;
     transition: 0.2s;
     &:hover {
       transform: scale(1.02);
@@ -39,8 +40,7 @@
 }
 
 .card-products .btn {
-  margin-top: 25px;
-  padding: 6px 30px;
+  padding: 6px 20px;
   border-radius: 4px;
 }
 
@@ -55,6 +55,34 @@
   height: 170px;
   object-fit: cover;
   border-radius: 50%;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+
+.card-price {
+  width:35px;
+  height:35px;
+  position:absolute;
+  top: 5px;
+  right:5px;
+  background:white;
+  opacity: 0.8;
+  border-radius:50px;
+}
+
+.card-price p {
+  padding-top:5px;
+  font-weight:bold;
+  color:black;
+}
+
+.card-img-product {
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
   &:hover {
     opacity: 0.9;
   }

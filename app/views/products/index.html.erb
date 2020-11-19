@@ -1,15 +1,20 @@
 <div class="banner-products" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1860&q=80);">
-<h1>Products</h1>
+<h1>Produits</h1>
 </div>
 <div class="container">
   <div class="cards-products">
     <% @products.each do |product| %>
 
     <div class="card-products">
+      <%= cl_image_tag product.photo.key, :class => 'card-img-product' %>
+      <div class="card-infos">
       <h3><%= product.name %></h3>
-      <p><%= product.category %> <%= product.price %> €</p>
-      <%= cl_image_tag product.photo.key, :class => 'card-img' %>
-      <%= link_to 'buy', product_orders_path(product), method: :post, :class => "btn btn-primary"%>
+      <p><%= product.category %></p>
+      <div class="card-price">
+      <p><%= product.price %> €</p>
+      </div>
+      <%= link_to 'Acheter', product_orders_path(product), method: :post, :class => "btn btn-primary"%>
+      </div>
     </div>
     <% end %>
   </div>

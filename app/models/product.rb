@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_one_attached :photo
 
-  CAT =  %w(fruits vegetables meat grocery fish drinks)
+  CAT =  %w(fruits légumes viande épicerie poisson boisson)
   validates :name, presence: true
   validates :category, presence: true
   validates :price, presence: true

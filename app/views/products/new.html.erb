@@ -1,6 +1,6 @@
 <div class="container" style="padding-top: 85px">
   <div class="card-form">
-    <h1>Add a product</h1>
+    <h1>Ajouter un produit</h1>
       <%= simple_form_for(@product) do |f| %>
       <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
