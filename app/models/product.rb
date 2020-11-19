@@ -9,5 +9,5 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :category, inclusion: { in: CAT }
   validates :price, numericality: { greater_than: 0 }
-
+  validates :photo, presence: true
 end
