@@ -2,6 +2,7 @@
 <div></div>
   <div class="items">
     <% if user_signed_in? %>
+
       <ul class="navbar-items">
         <li class="nav-item">
           <%= link_to "Page d'acceuil", root_path, class: "nav-link" %>
@@ -16,7 +17,12 @@
     <div class="navbar-avatar">
         <li class="nav-item">
           <%= link_to orders_path do %>
+          <div class="cart">
             <i class="fas fa-shopping-cart"></i>
+            <div class="fond">
+            <p><%= current_user.orders.where(status: "à payer").count %></p>
+            </div>
+          </div>
           <% end %>
         </li>
         <li class="nav-item dropdown">
