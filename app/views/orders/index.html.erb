@@ -1,33 +1,43 @@
 <div class="container">
   <h1 id="cart-title">Panier</h1>
   <div class="row">
-    <div class="col-lg-8 products-order">
-      <% @orders.each do |order| %>
-        <div class="product-order">
-          <%= cl_image_tag order.product.photo.key, :class => 'img-order' %>
-          <div class="block-components">
-              <p class="product-name-order"><%= order.product.name %></p>
-              <p class="product-price-order"><%= order.product.price %>€</p>
+    <% if @orders.empty? == true %>
+      <h4>Votre panier est vide</h4>
+    <% else %>
+      <div class="col-lg-8 products-order">
+        <% @orders.each do |order| %>
+          <div class="product-order">
+            <%= cl_image_tag order.product.photo.key, :class => 'img-order' %>
+            <div class="block-components">
+                <p class="product-name-order"><%= order.product.name %></p>
+                <p class="product-price-order"><%= order.product.price %>€</p>
+            </div>
+            <%= link_to order_path(order), method: :delete, data: { confirm: "Êtes vous sûr ?" } do %>
+              <i class="fa fa-trash destroy_dose"></i>
+            <% end %>
           </div>
-          <%= link_to order_path(order), method: :delete, data: { confirm: "Êtes vous sûr ?" } do %>
-            <i class="fa fa-trash destroy_dose"></i>
-          <% end %>
-        </div>
       <% end %>
-    </div>
-    <div class="col-lg-4">
-      <div class="pay-order">
-        <div class="total">
-          <h4>TOTAL</h4>
-          <h4><%= @orders.sum{|order| order.product.price} %> €</h4>
-        </div>
-        <%= link_to 'Payer ma commande', pay_path,method: :post, data: { confirm: "Êtes vous sûr ?" }, class: 'btn btn-success btn-pay-order'%>
       </div>
-    </div>
+      <div class="col-lg-4">
+        <div class="pay-order">
+          <div class="total">
+            <h4>TOTAL</h4>
+            <h4><%= @orders.sum{|order| order.product.price} %> €</h4>
+          </div>
+          <%= link_to 'Payer ma commande', pay_path,method: :post, data: { confirm: "Êtes vous sûr ?" }, class: 'btn btn-success btn-pay-order'%>
+        </div>
+      </div>
+    <% end %>
   </div>
+  <% if @orders.empty? == true %>
+    <div class="button-cart">
+      <%= link_to 'Faites vos courses !', products_path, class: 'btn btn-primary'%>
+    </div>
+  <% else %>
     <div class="button-cart">
       <%= link_to 'Retour', products_path, class: 'btn btn-primary'%>
     </div>
+  <% end %>
 </div>
 
 
