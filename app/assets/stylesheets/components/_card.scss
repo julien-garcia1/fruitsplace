@@ -22,7 +22,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   justify-content: space-evenly;
-  margin: 80px 0px;
 }
 
 .card-products {
@@ -31,12 +30,16 @@
     border-radius: 10px;
     height: 280px;
     width: 200px;
-    margin-top: 20px;
+    margin: 20px 0px;
     transition: 0.2s;
     position:relative;
     &:hover {
       transform: scale(1.02);
     }
+}
+
+.card-products h4 {
+  text-transform: capitalize;
 }
 
 .card-products .btn {

@@ -5,6 +5,10 @@
   justify-content: space-between;
   height: 60px;
   padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
   // box-shadow: 0px 1px 0px grey;
 }
 
@@ -51,4 +55,14 @@ li a {
 
 .fond p {
  text-align:center;
+}
+
+.items {
+  padding-right: 125px;
+}
+
+.logo {
+  padding-left: 20px;
+  color: #ff6a32;
+  font-family: 'Modak', cursive;
 }

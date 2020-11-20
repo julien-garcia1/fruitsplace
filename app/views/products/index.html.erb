@@ -5,7 +5,7 @@
   <div class="cards-products">
     <% @products.each do |product| %>
 
-    <div class="card-products">
+    <div class="card-products" id="product-<%= product.id %>">
       <%= cl_image_tag product.photo.key, :class => 'card-img-product' %>
       <div class="card-infos">
       <h4><%= product.name %></h4>
