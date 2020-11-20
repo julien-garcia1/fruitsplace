@@ -5,7 +5,7 @@
     <%= link_to 'Log In',  new_user_session_path, :class => "btn btn-success" %>
   <% end %>
 </div>
-
+<div class="slide-animation">
 <div class="content-home">
   <h2>Qu'est-ce que FruitsPlace ?</h2>
   <p>FruitsPlace est le double digital de votre marché local.<br>En tant que consommateur vous pouvez retrouver vos fruits et légumes préférés, mais aussi tous les produits que vous avez l'habitude d'acheter à votre marché.<br>
@@ -13,21 +13,26 @@
   Pour accéder à tous les produits ou pour vendre vos produits en ligne sélectionnez le bon choix sur les cartes ci-dessous et connectez-vous !</p>
   <h4><b>On vous attend !</b></h4>
 </div>
+
 <hr>
 
-<div class="container">
+<div class="container wrapper">
   <div class="cards-home">
-    <div class="card-home">
-      <h3>Producteur</h3>
-      <p>Voir mes produits</p>
-      <%= image_tag("https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", :alt => 'farmer', :class => 'card-img') %>
-      <%= link_to 'Ma ferme', my_products_path, :class => "btn btn-primary" %>
+    <div class="slide-left slide">
+      <div class="card-home">
+        <h3>Producteur</h3>
+        <p>Voir mes produits</p>
+        <%= image_tag("https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", :alt => 'farmer', :class => 'card-img') %>
+        <%= link_to 'Ma ferme', my_products_path, :class => "btn btn-primary" %>
+      </div>
     </div>
-    <div class="card-home">
-      <h3>Client</h3>
-      <p>Voir tous les produits</p>
-      <%= image_tag("https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1860&q=80", :alt => 'farmer', :class => 'card-img') %>
-      <%= link_to "Allons y", products_path, :class => "btn btn-primary" %>
+    <div class="slide-right slide">
+      <div class="card-home">
+        <h3>Client</h3>
+        <p>Voir tous les produits</p>
+        <%= image_tag("https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1860&q=80", :alt => 'farmer', :class => 'card-img') %>
+        <%= link_to "Allons y", products_path, :class => "btn btn-primary" %>
+      </div>
     </div>
   </div>
 </div>
