@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   @user = current_user
   @order = Order.new(product: @product, user: @user, status: 'à payer')
   @order.save
-  redirect_to products_path, notice: 'Votre produit a bien été ajouté'
+  redirect_to products_path(@product, anchor: "product-#{@product.id}"), notice: 'Votre produit a bien été ajouté'
   end
 
   def pay
