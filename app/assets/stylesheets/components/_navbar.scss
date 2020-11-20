@@ -30,3 +30,25 @@ li a {
   color: #666666;
   padding-right: 20px;
 }
+
+.cart {
+  position: relative;
+}
+
+
+.fond {
+  width:18px;
+  height:18px;
+  position:absolute;
+  background:#FF4500;
+  border-radius:50px;
+  font-size:13px;
+  left:15px;
+  bottom:13px;
+  font-weight:bold;
+  color:white;
+}
+
+.fond p {
+ text-align:center;
+}
