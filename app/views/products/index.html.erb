@@ -9,11 +9,13 @@
       <%= cl_image_tag product.photo.key, :class => 'card-img-product' %>
       <div class="card-infos">
       <h4><%= product.name %></h4>
-      <p><%= product.category %></p>
       <div class="card-price">
-      <p><%= product.price %> €</p>
+      <p><%= product.price %>.00 €</p>
       </div>
-      <%= link_to 'Acheter', product_orders_path(product), method: :post, :class => "btn btn-primary"%>
+      <div class="btn btn-primary">
+        <i class="fas fa-cart-arrow-down"></i>
+        <%= link_to 'Ajouter au panier', product_orders_path(product), method: :post %>
+      </div>
       </div>
     </div>
     <% end %>
